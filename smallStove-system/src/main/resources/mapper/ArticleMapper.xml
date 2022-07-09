@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bug.system.mapper.ArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.bug.system.domain.entity.Article">
+        <id property="articleId" column="article_id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="thumbnail" column="thumbnail" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="viewsNumber" column="views_number" jdbcType="INTEGER"/>
+        <result property="likesNumber" column="likes_number" jdbcType="INTEGER"/>
+        <result property="allowComment" column="allow_comment" jdbcType="CHAR"/>
+        <result property="status" column="status" jdbcType="CHAR"/>
+        <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="deleted" column="deleted" jdbcType="CHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        article_id,user_id,title,thumbnail,
+        content,views_number,likes_number,
+        allow_comment,status,create_by,
+        create_time,update_by,update_time,
+        deleted
+    </sql>
+
+    <insert id="setTypeByBatch" parameterType="java.util.Map">
+        insert into sys_article_type(article_id, type_id)
+        values
+        <foreach collection="map" item="item" index="index" separator=",">
+            (#{item},#{index})
+        </foreach>
+    </insert>
+
+    <update id="updateLikesNumberByArticleId">
+        update sys_article
+        set likes_number = #{likesNumber,jdbcType=NUMERIC}
+        <where>
+            <if test="articleId != null">
+                article_id = #{articleId,jdbcType=NUMERIC}
+            </if>
+        </where>
+    </update>
+
+</mapper>
