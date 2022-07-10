@@ -3,20 +3,20 @@ package com.bug.system.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bug.framework.constant.SystemConstant;
+import com.bug.framework.exception.SystemException;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.exception.SystemException;
 import com.bug.framework.security.domain.entity.LoginUser;
 import com.bug.framework.security.domain.vo.LoginUserVo;
 import com.bug.framework.utils.BeanCopyUtils;
 import com.bug.framework.utils.SecurityUtils;
 import com.bug.system.domain.entity.SysUser;
-import com.bug.system.mapper.SysUserMapper;
+import com.bug.system.mapper.UserMapper;
 import com.bug.system.service.SysUserService;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -27,10 +27,10 @@ import java.util.Date;
  * @createDate 2022-05-31 16:48:26
  */
 @Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
+public class UserServiceImpl extends ServiceImpl<UserMapper, SysUser>
         implements SysUserService {
     @Resource
-    private SysUserMapper userMapper;
+    private UserMapper userMapper;
 
     @Override
     public SysUser getUserByUsername(String username) {

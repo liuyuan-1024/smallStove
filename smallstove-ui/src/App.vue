@@ -1,3 +1,4 @@
+<!--suppress JSUnresolvedVariable -->
 <template>
   <el-container>
     <LeftBar/>

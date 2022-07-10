@@ -1,6 +1,12 @@
 import axios from 'axios'
 // 引入el 提示框
 import {ElMessage} from 'element-plus'
+import {
+    delAccessTokenFromLocal,
+    delRefreshTokenFromLocal,
+    getAccessTokenFromLocal,
+    getRefreshTokenFromLocal
+} from "@/utils/storage";
 
 const requests = axios.create({
     // 请求地址
@@ -13,8 +19,8 @@ const requests = axios.create({
 requests.interceptors.request.use(
     (config) => {
         // 配置请求头
-        const access_token: string = localStorage.getItem('access_token') || ''
-        const refresh_token: string = localStorage.getItem('refresh_token') || ''
+        const access_token: string = getAccessTokenFromLocal()
+        const refresh_token: string = getRefreshTokenFromLocal()
         config.headers = {
             //'Content-Type':'application/x-www-form-urlencoded',   // 传参方式表单
             'Content-Type': 'application/json;charset=UTF-8', // 传参方式json
@@ -35,8 +41,8 @@ requests.interceptors.response.use(
         // 响应结果的状态(code的前三位), 200正常 400异常
         let status = String(res.data.code).substring(0, 3);
         if (status !== "200") {
-            localStorage.removeItem('access_token')
-            localStorage.removeItem('refresh_token')
+            delAccessTokenFromLocal()
+            delRefreshTokenFromLocal()
             ElMessage.warning(res.data.message)
         }
         // 返回的就是自定义的ResponseResult

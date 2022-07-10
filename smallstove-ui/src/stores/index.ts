@@ -4,6 +4,9 @@
 
 import {defineStore} from 'pinia';
 import LoginUser from "@/types/interface/LoginUser";
+import {
+    delAccessTokenFromLocal, delRefreshTokenFromLocal, getLoginUserFromSession, setLoginUserToSession,
+} from "@/utils/storage";
 
 // 'LoginUser' 是storeId，自己随便取，保证唯一
 export const useLoginUserStore = defineStore('LoginUser', {
@@ -32,7 +35,7 @@ export const useLoginUserStore = defineStore('LoginUser', {
             try {
                 this.loginUser = loginUser
                 // 将本人信息存储到sessionStorage中, 防止用户刷新页面导致个人信息丢失
-                sessionStorage.setItem('loginUser', JSON.stringify(loginUser))
+                setLoginUserToSession(loginUser)
             } catch (error) {
                 console.log('useLoginUserStore出错!', error)
             }
@@ -40,12 +43,13 @@ export const useLoginUserStore = defineStore('LoginUser', {
         // 当本人信息发生改变时, 重新设置本人信息
         reset() {
             try {
-                const item = sessionStorage.getItem('loginUser');
-                if (item === null || item === undefined || item === '') {
+                const loginUser = getLoginUserFromSession();
+                if (loginUser === '') {
                     // sessionStorage中个人信息为空, 清空localStorage的令牌, 让用户重新登录
-                    localStorage.clear()
+                    delAccessTokenFromLocal()
+                    delRefreshTokenFromLocal()
                 } else {
-                    this.loginUser = JSON.parse(item)
+                    this.loginUser = loginUser
                 }
             } catch (error) {
                 console.log('useLoginUserStore出错!', error)

@@ -7,7 +7,7 @@ import com.bug.framework.utils.BeanCopyUtils;
 import com.bug.framework.utils.SecurityUtils;
 import com.bug.system.domain.entity.SysMenu;
 import com.bug.system.domain.vo.MenuVo;
-import com.bug.system.mapper.SysMenuMapper;
+import com.bug.system.mapper.MenuMapper;
 import com.bug.system.service.SysMenuService;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +20,11 @@ import java.util.List;
  * @createDate 2022-06-09 12:13:31
  */
 @Service
-public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu>
+public class MenuServiceImpl extends ServiceImpl<MenuMapper, SysMenu>
         implements SysMenuService {
 
     @Resource
-    private SysMenuMapper menuMapper;
+    private MenuMapper menuMapper;
 
     @Override
     public Result<List<MenuVo>> getMenu() {

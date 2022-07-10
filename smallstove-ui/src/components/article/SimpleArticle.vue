@@ -1,14 +1,14 @@
 <!-- 显示在个人主页中的单个文章组件 -->
 <template>
   <div class="article floating-border">
-    <div>
+    <div class="simple-header">
       {{ article.createTime }}
       <span v-for="(tag, index) in article.typeVoList" :key="index" class="hover-pointer" @click.stop="toTagDetails">
         {{ tag.typeName }}
       </span>
     </div>
 
-    <md-editor v-model="article.title" preview-only class="markdown" preview-theme="preview"/>
+    <h1>{{ article.title }}</h1>
     <md-editor v-model="article.thumbnail" preview-only class="markdown" preview-theme="preview"/>
   </div>
 
@@ -28,5 +28,10 @@ defineProps<{
 <style lang="less" scoped>
 .article {
   margin: 10px 0;
+  padding: 10px;
+
+  .simple-header{
+    padding-bottom: 5px;
+  }
 }
 </style>

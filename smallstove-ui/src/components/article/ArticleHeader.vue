@@ -1,5 +1,5 @@
 <template>
-  <div class="clearFloat">
+  <div class="article-header clearFloat">
     <el-image
         :src="avatar ? avatar:'avatar-404.jpg'"
         class="avatar"
@@ -27,25 +27,28 @@ defineProps<{
   userId: number,
   nickName: string,
   avatar: string,
-  createTime: Date,
+  createTime: string,
   typeVoList: Type[]
 }>()
 </script>
 
 <style lang="less" scoped>
-.user {
-  position: absolute;
-  left: 65px;
-  height: 50px;
+.article-header {
+  padding-bottom: 5px;
+  .user {
+    position: absolute;
+    left: 65px;
+    height: 50px;
 
-  .username {
-    display: block;
-    padding-bottom: 3px;
-    font-size: 18px;
+    .username {
+      display: block;
+      padding-bottom: 3px;
+      font-size: 18px;
+    }
   }
-}
 
-.fold-option {
-  float: right;
+  .fold-option {
+    float: right;
+  }
 }
 </style>

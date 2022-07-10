@@ -9,6 +9,7 @@
           :src="loginUserRef.avatar"
           fit="fill"
           class="avatar"
+          @click="toMy(loginUserRef.id)"
       />
       <h2>{{ loginUserRef.nickName }}</h2>
     </div>
@@ -24,6 +25,7 @@ import {Search} from '@element-plus/icons-vue';
 import {isPublish} from "@/assets/ts/common";
 import {useLoginUserStore} from "@/stores";
 import {storeToRefs} from "pinia";
+import {toMy} from "@/assets/ts/common";
 
 const loginUserRef = storeToRefs(useLoginUserStore()).loginUser;
 </script>

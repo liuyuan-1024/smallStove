@@ -1,3 +1,5 @@
+// noinspection JSIgnoredPromiseFromCall
+
 import router from '@/router'
 import {useRoute} from "vue-router";
 

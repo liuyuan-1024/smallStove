@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
 import SingleArticle from '@/components/article/SingleArticle.vue'
-import {getArticleList} from '@/api/api'
+import {getArticleList} from '@/api/article'
 import {toTagDetails} from '@/assets/ts/common'
 import Page from '@/types/interface/Page'
 import Article from "@/types/interface/Article";

@@ -12,7 +12,7 @@ import java.util.List;
  * @createDate 2022-06-09 12:13:31
  * @Entity com.bug.system.domain.entity.SysMenu
  */
-public interface SysMenuMapper extends BaseMapper<SysMenu> {
+public interface MenuMapper extends BaseMapper<SysMenu> {
 
     List<SysMenu> selectAll();
 

@@ -9,7 +9,7 @@
         :type-vo-list="article.typeVoList"
     />
 
-    <md-editor v-model="article.title" preview-only class="markdown" preview-theme="preview"/>
+    <h1>{{ article.title }}</h1>
     <md-editor v-model="article.thumbnail" preview-only class="markdown" preview-theme="preview"/>
 
     <ArticleFooter

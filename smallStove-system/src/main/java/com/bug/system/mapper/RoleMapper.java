@@ -1,9 +1,10 @@
 package com.bug.system.mapper;
-import java.util.List;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bug.system.domain.entity.SysRole;
 import org.apache.ibatis.annotations.Param;
 
-import com.bug.system.domain.entity.SysRole;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.List;
 
 /**
 * @author 源
@@ -11,7 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2022-05-31 18:44:14
 * @Entity com.bug.system.domain.entity.SysRole
 */
-public interface SysRoleMapper extends BaseMapper<SysRole> {
+public interface RoleMapper extends BaseMapper<SysRole> {
 
     List<SysRole> selectAllRoleByUserId(@Param("userId") Long userId);
 }

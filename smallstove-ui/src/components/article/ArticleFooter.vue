@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import {MagicStick, ForkSpoon, Share} from '@element-plus/icons-vue'
-import {likes} from '@/api/api'
+import {likes} from '@/api/article'
 import {toRef} from "vue";
 
 const props = defineProps<{

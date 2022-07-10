@@ -14,9 +14,6 @@
     <el-button v-show="isLogin() && !isPublish()" class="menu-button login-publish" @click="toPublishArticle">
       发帖
     </el-button>
-    <el-button v-show="isLogin() && isPublish()" class="menu-button submit-button" @click="publish">
-      提交
-    </el-button>
   </div>
 </template>
 
@@ -37,9 +34,7 @@ const back = () => {
   router.push('/')
 }
 
-const publish = () => {
-  alert('提交帖子')
-}
+
 </script>
 
 <style lang="less" scoped>
@@ -59,7 +54,7 @@ const publish = () => {
     margin: auto;
   }
 
-  .back-button, .login-publish, .submit-button {
+  .back-button, .login-publish {
     position: absolute;
     top: 12px;
     margin: 0;
@@ -74,7 +69,7 @@ const publish = () => {
     left: 10px;
   }
 
-  .login-publish, .submit-button {
+  .login-publish {
     right: 10px;
   }
 }

@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
  * @createDate 2022-05-31 16:48:26
  * @Entity com.bug.system.domain.entity.SysUser
  */
-public interface SysUserMapper extends BaseMapper<SysUser> {
+public interface UserMapper extends BaseMapper<SysUser> {
 
     @Insert("insert into sys_user_role values (${userId},${roleId})")
     int setRoleToUser(@Param("userId") Long userId, @Param("roleId") Long roleId);

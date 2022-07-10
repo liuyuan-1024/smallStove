@@ -4,10 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bug.framework.constant.SystemConstant;
+import com.bug.framework.exception.SystemException;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.exception.SystemException;
 import com.bug.framework.security.domain.entity.LoginUser;
 import com.bug.framework.utils.BeanCopyUtils;
 import com.bug.framework.utils.KeyWordSearcher;
@@ -20,14 +20,14 @@ import com.bug.system.domain.vo.ArticleVo;
 import com.bug.system.domain.vo.PageVo;
 import com.bug.system.domain.vo.TypeVo;
 import com.bug.system.mapper.ArticleMapper;
-import com.bug.system.mapper.SysUserMapper;
+import com.bug.system.mapper.UserMapper;
 import com.bug.system.mapper.TypeMapper;
 import com.bug.system.service.ArticleService;
+import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -50,7 +50,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     @Resource
     private TypeMapper typeMapper;
     @Resource
-    private SysUserMapper userMapper;
+    private UserMapper userMapper;
 
     @Override
     public Result<PageVo<ArticleVo>> getArticleList(Integer currentPage, Integer pageSize, Long typeId, Long userId) {

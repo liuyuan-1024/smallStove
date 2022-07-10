@@ -1,20 +1,20 @@
 <template>
-  <div class="user-info">
+  <div class="floating-border user-info">
     <el-image
         :src="avatar? avatar:'avatar-404.jpg'"
         fit="fill"
         loading="lazy"
         :preview-src-list="avatar"
     />
-    <h1>nickName: {{ nickName }}</h1>
+    <h1>昵称: {{ nickName }}</h1>
     <div v-if="isLoginUser()">
-      username: {{ loginUserRef.username }}
+      账号: {{ loginUserRef.username }}
       <br/>
-      email: {{ loginUserRef.email }}
+      邮箱: {{ loginUserRef.email }}
       <br/>
-      mobile: {{ loginUserRef.mobile }}
+      手机: {{ loginUserRef.mobile }}
       <br/>
-      sex: {{ loginUserRef.sex }}
+      性别: {{ Sex[loginUserRef.sex] }}
     </div>
   </div>
 
@@ -41,13 +41,15 @@
 <script setup lang="ts">
 import {reactive, ref} from "vue";
 import {useRoute} from "vue-router";
-import {getArticleList, getUserInfo} from "@/api/api";
-import SimpleArticle from '@/components/article/SimpleArticle.vue';
-import {toArticleDetails} from '@/assets/ts/common';
-import Page from "@/types/interface/Page";
 import {useLoginUserStore} from "@/stores";
 import {storeToRefs} from "pinia";
+import {getUserInfo} from "@/api/user";
+import {getArticleList} from "@/api/article";
+import {toArticleDetails} from '@/assets/ts/common';
+import SimpleArticle from '@/components/article/SimpleArticle.vue';
+import Page from "@/types/interface/Page";
 import Article from "@/types/interface/Article";
+import {Sex} from "@/enums/SystemEnums";
 
 // 当前登录用户信息
 let loginUserRef = storeToRefs(useLoginUserStore()).loginUser
@@ -98,6 +100,7 @@ const handleCurrentChange = () => {
 
 <style lang="less" scoped>
 .user-info {
+  padding: 10px;
   .el-image {
     width: 100px;
     height: 100px;

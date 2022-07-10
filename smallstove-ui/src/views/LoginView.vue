@@ -1,3 +1,4 @@
+<!--suppress JSCheckFunctionSignatures -->
 <template>
   <el-form ref="loginFormRef" :model="loginForm" :rules="rules" label-width="100px" class="loginForm">
     <el-form-item label="账号" prop="username">
@@ -19,8 +20,9 @@ import router from "@/router";
 import type {FormInstance} from 'element-plus'
 import {ElMessage} from 'element-plus'
 import {useLoginUserStore} from "@/stores";
-import {login} from '@/api/api'
+import {login} from '@/api/user'
 import LoginUser from "@/types/interface/LoginUser";
+import {setAccessTokenToLocal, setRefreshTokenToLocal} from "@/utils/storage";
 
 const store = useLoginUserStore()
 
@@ -52,8 +54,8 @@ const submitForm = (form: FormInstance | undefined) => {
       // 登录并保存令牌
       const res: any = await login(loginForm)
       const loginUser: LoginUser = res.data
-      localStorage.setItem('access_token', loginUser.token.access_token)
-      localStorage.setItem('refresh_token', loginUser.token.refresh_token)
+      setAccessTokenToLocal(loginUser.token.access_token)
+      setRefreshTokenToLocal(loginUser.token.refresh_token)
       store.set(loginUser).then(() => {
         router.push('/')
         ElMessage.success(res.message)

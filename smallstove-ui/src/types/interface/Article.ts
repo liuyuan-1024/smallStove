@@ -13,5 +13,6 @@ export default interface Article {
     likesNumber: number
     allowComment: boolean
     status: boolean
-    createTime: Date
+    // 后端已经将日期格式化, 此处使用string来接受即可
+    createTime: string
 }

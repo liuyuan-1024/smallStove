@@ -11,8 +11,10 @@ import ChatView from '@/views/ChatView.vue'
 import NotificationView from '@/views/NotificationView.vue'
 import FavoritesView from '@/views/FavoritesView.vue'
 import MyView from '@/views/MyView.vue'
-import {checkToken, isSuccess} from '@/api/api'
+import {isSuccess} from "@/utils/common"
+import {checkToken} from '@/api/user'
 import {useLoginUserStore} from "@/stores"
+import {delAccessTokenFromLocal, delRefreshTokenFromLocal, getAccessTokenFromLocal} from "@/utils/storage";
 
 
 const routes = [
@@ -105,7 +107,7 @@ router.beforeEach((to, from, next) => {
 
     // 判断to是否需要权限
     if (to.meta.auth) {
-        const access_token = localStorage.getItem('access_token')
+        const access_token = getAccessTokenFromLocal()
         // 用户未登录, 提示用户需要登录
         if (access_token === null || access_token === undefined || access_token === '') {
             ElMessage.warning('未登录, 请登录后操作!')
@@ -119,7 +121,8 @@ router.beforeEach((to, from, next) => {
                 next()
             } else {
                 // 身份已过期, 响应拦截器会弹窗, 这里不需要弹窗
-                localStorage.clear()
+                delAccessTokenFromLocal()
+                delRefreshTokenFromLocal()
                 next('/login')
             }
         })

@@ -2,7 +2,7 @@
   <el-select
       v-model="tags"
       multiple
-      multiple-limit="10"
+      :multiple-limit="limit"
       filterable
       default-first-option
       :reserve-keyword="false"
@@ -20,9 +20,10 @@
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {getTags} from "@/api/api";
+import {getTags} from "@/api/article";
 import Type from "@/types/interface/Type";
 
+const limit: number = 10
 const tags = ref<Type[]>([])
 const allTags = ref<Type[]>([])
 
@@ -33,15 +34,16 @@ getTags().then((value) => {
 
 <style lang="less" scoped>
 .el-select {
-  width: 100%;
-  padding-top: 8px;
+  display: inline-block;
+  width: 90%;
+  padding-top: 5px;
 
-  :deep(.el-input) {
-    --el-input-bg-color: #1e293b !important;
-  }
+  :deep(.el-select__tags) {
+    height: 24px !important;
 
-  :deep(.el-tag--info) {
-    background-color: #343F51 !important;
+    .el-tag--info {
+      background-color: #343F51 !important;
+    }
   }
 }
 </style>
