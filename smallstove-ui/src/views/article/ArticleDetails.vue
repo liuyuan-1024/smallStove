@@ -21,21 +21,19 @@
 </template>
 
 <script setup lang="ts">
-import ArticleHeader from '../../components/article/ArticleHeader.vue'
-import ArticleFooter from '../../components/article/ArticleFooter.vue'
-import MdEditor from 'md-editor-v3'
-import 'md-editor-v3/lib/style.css'
 import {ref} from "vue";
 import {useRoute} from "vue-router";
+import MdEditor from 'md-editor-v3'
+import 'md-editor-v3/lib/style.css'
+import ArticleHeader from '@/components/article/ArticleHeader.vue'
+import ArticleFooter from '@/components/article/ArticleFooter.vue'
 import {getArticleDetails} from "@/api/article";
 
-let article = ref({})
+const article = ref({})
 getArticleDetails(useRoute().params.articleId)
     .then((value: any) => {
       article.value = value.data
     })
-
-
 </script>
 
 <style lang="less" scoped>

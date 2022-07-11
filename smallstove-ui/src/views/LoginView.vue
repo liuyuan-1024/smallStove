@@ -24,8 +24,6 @@ import {login} from '@/api/user'
 import LoginUser from "@/types/interface/LoginUser";
 import {setAccessTokenToLocal, setRefreshTokenToLocal} from "@/utils/storage";
 
-const store = useLoginUserStore()
-
 const loginFormRef = ref<FormInstance>()
 const loginForm = reactive({
   username: '',
@@ -56,14 +54,13 @@ const submitForm = (form: FormInstance | undefined) => {
       const loginUser: LoginUser = res.data
       setAccessTokenToLocal(loginUser.token.access_token)
       setRefreshTokenToLocal(loginUser.token.refresh_token)
-      store.set(loginUser).then(() => {
+      useLoginUserStore().set(loginUser).then(() => {
         router.push('/')
         ElMessage.success(res.message)
       })
     })
   }
 }
-
 
 const resetForm = (form: FormInstance | undefined) => {
   if (form) {

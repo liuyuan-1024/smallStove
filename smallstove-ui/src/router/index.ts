@@ -1,7 +1,7 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 import {ElMessage} from 'element-plus'
 
-import ArticleListView from '@/components/article/ArticleList.vue'
+import ArticleListView from '@/views/article/ArticleList.vue'
 import ArticleDetailsView from '@/views/article/ArticleDetails.vue'
 import TagDetailsView from '@/views/TagDetailsView.vue'
 import LoginView from '@/views/LoginView.vue'

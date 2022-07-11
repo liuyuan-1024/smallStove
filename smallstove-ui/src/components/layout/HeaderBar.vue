@@ -1,13 +1,16 @@
 <template>
   <div id="fixed-header">
     <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="menu-button back-button" @click="back()"/>
-    <div class="recommend-focus">
-      <router-link to="/">
-        <el-button class="menu-button">推荐</el-button>
-      </router-link>
-      <router-link to="/attention">
-        <el-button class="menu-button">关注</el-button>
-      </router-link>
+
+    <div class="header-menu-box">
+      <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" :router="true" class="menu header-menu">
+        <el-menu-item class="menu-item header-menu-item recommend" index="/">
+          <span>推荐</span>
+        </el-menu-item>
+        <el-menu-item class="menu-item header-menu-item attention" index="/attention">
+          <span>关注</span>
+        </el-menu-item>
+      </el-menu>
     </div>
 
     <el-button v-show="!isLogin()" class="menu-button login-publish" @click="toLogin">登录</el-button>
@@ -18,23 +21,18 @@
 </template>
 
 <script lang="ts" setup>
-import router from '@/router'
 import {ArrowLeftBold} from '@element-plus/icons-vue'
-import {isLogin, isArticleListView, isPublish} from "@/assets/ts/common";
+import {
+  back,
+  toLogin,
+  toPublishArticle,
+  isLogin,
+  isArticleListView,
+  isPublish
+} from "@/assets/ts/common";
+import {useRoute} from "vue-router";
 
-const toLogin = () => {
-  router.push('/login')
-}
-
-const toPublishArticle = () => {
-  router.push('/publishArticle')
-}
-
-const back = () => {
-  router.push('/')
-}
-
-
+const route = useRoute()
 </script>
 
 <style lang="less" scoped>
@@ -43,16 +41,28 @@ const back = () => {
   top: 0;
   left: 350px;
   z-index: 1;
-  width: 786.5px;
+  width: 772.5px;
   height: 55px;
-  text-align: center;
-  background-color: #0f172a;
+  margin: 0 7px;
 
-  .recommend-focus {
-    height: 100%;
-    line-height: 55px;
-    margin: auto;
+  .header-menu-box {
+    width: 160px;
+    margin: 0 auto;
+
+    .header-menu {
+      justify-content: center;
+      background-color: transparent !important;
+      text-align: center;
+
+      .header-menu-item {
+        border: none;
+        width: 80px;
+        height: 55px;
+        font-size: 20px;
+      }
+    }
   }
+
 
   .back-button, .login-publish {
     position: absolute;

@@ -9,7 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ArticleFooter: typeof import('./src/components/article/ArticleFooter.vue')['default']
     ArticleHeader: typeof import('./src/components/article/ArticleHeader.vue')['default']
-    ArticleList: typeof import('./src/components/article/ArticleList.vue')['default']
+    ArticleList: typeof import('./src/views/article/ArticleList.vue')['default']
     Backtop: typeof import('./src/components/Backtop.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
@@ -23,6 +23,8 @@ declare module '@vue/runtime-core' {
     ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']

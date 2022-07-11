@@ -2,35 +2,50 @@
   <el-aside id="left-bar">
     <div id="favicon">开源小灶..........哈哈哈</div>
 
-    <div id="left-menu-bar" class="floating-border">
-      <router-link to="/" class="router-link">
-        <el-button :icon="Monitor" class="menu-button left-menu">主页</el-button>
-      </router-link>
-      <router-link to="/notification">
-        <el-button :icon="Bell" class="menu-button left-menu">
-          <el-badge :value="12" type="primary">通知</el-badge>
-        </el-button>
-      </router-link>
-      <router-link to="/chat">
-        <el-button :icon="ChatDotRound" class="menu-button left-menu">
-          <el-badge :value="12" type="primary">私信</el-badge>
-        </el-button>
-      </router-link>
-      <router-link to="/favorites">
-        <el-button :icon="Star" class="menu-button left-menu">收藏</el-button>
-      </router-link>
-      <el-button :icon="User" class="menu-button left-menu" @click="toMy(loginUserRef.id)">我的</el-button>
-    </div>
+    <el-menu :default-active="route.path" :router="true" class="menu floating-border">
+      <el-menu-item class="floating-border menu-item left-menu-item" index="/">
+        <el-icon>
+          <Monitor/>
+        </el-icon>
+        <span>主页</span>
+      </el-menu-item>
+      <el-menu-item class="floating-border menu-item left-menu-item" index="/notification">
+        <el-icon>
+          <Bell/>
+        </el-icon>
+        <span>通知</span>
+      </el-menu-item>
+      <el-menu-item class="floating-border menu-item left-menu-item" index="/chat">
+        <el-icon>
+          <ChatDotRound/>
+        </el-icon>
+        <span>私信</span>
+      </el-menu-item>
+      <el-menu-item class="floating-border menu-item left-menu-item" index="/favorites">
+        <el-icon>
+          <Star/>
+        </el-icon>
+        <span>收藏</span>
+      </el-menu-item>
+      <el-menu-item class="floating-border menu-item left-menu-item" index="/my" @click="toMy(loginUserRef.id)">
+        <el-icon>
+          <User/>
+        </el-icon>
+        <span>我的</span>
+      </el-menu-item>
+    </el-menu>
   </el-aside>
 </template>
 
 <script lang="ts" setup>
-import {Monitor, Bell, ChatDotRound, Star, User} from '@element-plus/icons-vue';
-import {toMy} from "@/assets/ts/common";
 import {useLoginUserStore} from "@/stores";
 import {storeToRefs} from "pinia";
+import {Monitor, Bell, ChatDotRound, Star, User} from '@element-plus/icons-vue';
+import {toMy} from "@/assets/ts/common";
+import {useRoute} from "vue-router";
 
 const loginUserRef = storeToRefs(useLoginUserStore()).loginUser
+const route = useRoute()
 </script>
 
 <style lang="less" scoped>
@@ -38,24 +53,15 @@ const loginUserRef = storeToRefs(useLoginUserStore()).loginUser
   position: fixed;
   left: 100px;
   width: 250px;
-  text-align: center;
 
   #favicon {
     height: 55px;
     line-height: 55px;
   }
 
-  #left-menu-bar {
-    height: 340px;
-    padding: 20px 0;
-  }
-
-  .left-menu {
-    width: 200px;
-    padding: 27px 30px;
-    margin: 3px;
-    // 字体图标
-    font-size: 24px;
+  .left-menu-item {
+    padding: 0 90px;
+    font-size: 20px;
   }
 }
 </style>

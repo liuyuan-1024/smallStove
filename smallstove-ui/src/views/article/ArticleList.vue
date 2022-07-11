@@ -37,9 +37,9 @@ import {toTagDetails} from '@/assets/ts/common'
 import Page from '@/types/interface/Page'
 import Article from "@/types/interface/Article";
 
-let currentPage = ref(1)
-let pageSize = ref(10)
-const page: Page<Article> = reactive({
+let currentPage = ref<number>(1)
+let pageSize = ref<number>(10)
+const page = reactive<Page<Article>>({
   rows: [],
   total: 0,
 })

@@ -31,8 +31,8 @@ const toolbars = [
   'pageFullscreen', 'preview', 'htmlPreview', 'catalog'
 ];
 
-let title = ref('')
-let content = ref(``)
+let title = ref<string>('')
+let content = ref<string>(``)
 
 /**
  * 上传图片的预览是直接加载远程地址的图片, 所以在回调函数中需要urls作为参数

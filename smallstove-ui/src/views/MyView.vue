@@ -56,8 +56,8 @@ let loginUserRef = storeToRefs(useLoginUserStore()).loginUser
 const loginUserId = loginUserRef.value.id
 
 // 必然显示的信息
-let avatar = ref(loginUserRef.value.avatar)
-let nickName = ref(loginUserRef.value.nickName)
+let avatar = ref<string>(loginUserRef.value.avatar)
+let nickName = ref<string>(loginUserRef.value.nickName)
 
 // 判断当前登录用户浏览的是否为本人信息
 function isLoginUser(): boolean {
@@ -73,9 +73,9 @@ if (!isLoginUser()) {
 }
 
 // 分页相关
-let currentPage = ref(1);
-let pageSize = ref(10)
-const page: Page<Article> = reactive({
+let currentPage = ref<number>(1);
+let pageSize = ref<number>(10)
+const page = reactive<Page<Article>>({
   rows: [],
   total: 0,
 })
@@ -101,6 +101,7 @@ const handleCurrentChange = () => {
 <style lang="less" scoped>
 .user-info {
   padding: 10px;
+
   .el-image {
     width: 100px;
     height: 100px;
