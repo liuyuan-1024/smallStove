@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-bar">
     <el-button :icon="ForkSpoon" disabled class="bottom-button disabled-button">围观 {{ viewsNumber }}</el-button>
-    <el-button :icon="MagicStick" class="small-menu-button bottom-button" @click.stop="clickLikes()">
+    <el-button :icon="MagicStick" class="small-menu-button bottom-button" @click.stop="likes(articleId)">
       点赞 {{ likesNumberRef }}
     </el-button>
     <el-button :icon="Share" class="small-menu-button bottom-button">分享</el-button>
@@ -20,10 +20,6 @@ const props = defineProps<{
 }>()
 
 let likesNumberRef = toRef(props, 'likesNumber');
-
-const clickLikes = () => {
-  likes(props.articleId)
-}
 </script>
 
 <style lang="less" scoped>

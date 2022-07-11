@@ -1,6 +1,6 @@
 <template>
   <div id="fixed-header">
-    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="menu-button back-button" @click="back()"/>
+    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="menu-button back" @click="back()"/>
 
     <div class="header-menu-box">
       <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" :router="true" class="menu header-menu">
@@ -64,7 +64,7 @@ const route = useRoute()
   }
 
 
-  .back-button, .login-publish {
+  .back, .login-publish {
     position: absolute;
     top: 12px;
     margin: 0;
@@ -75,7 +75,7 @@ const route = useRoute()
     }
   }
 
-  .back-button {
+  .back {
     left: 10px;
   }
 

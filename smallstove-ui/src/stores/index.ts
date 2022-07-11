@@ -28,6 +28,11 @@ export const useLoginUserStore = defineStore('LoginUser', {
             }
         }
     },
+    getters: {
+        getId(): number {
+            return this.loginUser.id
+        }
+    },
     // 支持同步,异步
     actions: {
         // 查询本人信息并肩信息设置到pinia中管理
