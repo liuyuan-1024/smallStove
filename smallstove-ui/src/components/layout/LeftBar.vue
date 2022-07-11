@@ -60,6 +60,7 @@ const loginUserRef = storeToRefs(useLoginUserStore()).loginUser
   }
 
   .left-menu-item {
+    --el-menu-hover-bg-color: #334155 !important;
     padding: 0 90px;
     font-size: 20px;
   }

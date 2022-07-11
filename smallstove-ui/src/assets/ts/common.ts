@@ -2,7 +2,6 @@
 
 import router from '@/router'
 import {useRoute} from "vue-router";
-import {ElMessage} from "element-plus/es";
 
 export function back() {
     router.push('/')
@@ -37,7 +36,7 @@ export function toFavorites() {
 }
 
 export function toMy(userId: number) {
-    console.log('我的',userId)
+    console.log('我的', userId)
     router.push({name: 'My', params: {userId: userId}});
 }
 

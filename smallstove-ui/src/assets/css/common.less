@@ -1,3 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+  background-color: #0f172a;
+  color: #94a3b8;
+}
+
+#main {
+  margin: 0 calc(400px + 100% - 100vw) 0 350px;
+  padding-top: 55px;
+  min-width: 786.5px;
+  --el-main-padding: 0 7px 0 !important;
+}
+
 //双伪元素实现清除浮动
 .clearFloat {
   &::after,
@@ -29,13 +47,12 @@
   border: none !important;
   background-color: #1e293b !important;
   font-weight: bold;
-  -active-color: pink;
 }
 
 /* 菜单项通用样式 */
 .menu-item {
   --el-menu-text-color: #94a3b8 !important;
-  --el-menu-hover-bg-color: #334155 !important;
+  --el-menu-hover-bg-color: transparent !important;
 }
 
 /* 按钮通用样式 */

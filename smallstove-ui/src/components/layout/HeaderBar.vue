@@ -3,11 +3,11 @@
     <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="menu-button back" @click="back()"/>
 
     <div class="header-menu-box">
-      <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" :router="true" class="menu header-menu">
-        <el-menu-item class="menu-item header-menu-item recommend" index="/">
+      <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" class="menu header-menu">
+        <el-menu-item class="menu-item header-menu-item recommend" index="/" @click="toMain()">
           <span>推荐</span>
         </el-menu-item>
-        <el-menu-item class="menu-item header-menu-item attention" index="/attention">
+        <el-menu-item class="menu-item header-menu-item attention" index="/attention" @click="toAttention()">
           <span>关注</span>
         </el-menu-item>
       </el-menu>
@@ -24,6 +24,8 @@
 import {ArrowLeftBold} from '@element-plus/icons-vue'
 import {
   back,
+  toMain,
+  toAttention,
   toLogin,
   toPublishArticle,
   isLogin,

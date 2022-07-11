@@ -25,23 +25,3 @@ import '@/assets/css/reset.less';
 import '@/assets/css/common.less';
 import {useRoute} from "vue-router";
 </script>
-
-<style lang="less">
-html,
-body {
-  height: 100%;
-}
-
-#app {
-  min-height: 100%;
-  background-color: #0f172a;
-  color: #94a3b8;
-}
-
-#main {
-  margin: 0 calc(400px + 100% - 100vw) 0 350px;
-  padding-top: 55px;
-  min-width: 786.5px;
-  --el-main-padding: 0 7px 0 !important;
-}
-</style>
