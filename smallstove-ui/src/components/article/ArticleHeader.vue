@@ -14,7 +14,7 @@
         </span>
       </div>
     </div>
-    <el-button :icon="MoreFilled" class="menu-button fold-option"/>
+    <el-button :icon="MoreFilled" class="small-button fold-option"/>
   </div>
 </template>
 

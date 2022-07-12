@@ -1,6 +1,6 @@
 <template>
   <div id="fixed-header">
-    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="menu-button back" @click="back()"/>
+    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="small-button back" @click="back()"/>
 
     <div class="header-menu-box">
       <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" class="menu header-menu">
@@ -13,8 +13,8 @@
       </el-menu>
     </div>
 
-    <el-button v-show="!isLogin()" class="menu-button login-publish" @click="toLogin">登录</el-button>
-    <el-button v-show="isLogin() && !isPublish()" class="menu-button login-publish" @click="toPublishArticle">
+    <el-button v-show="!isLogin()" class="small-button login-publish" @click="toLogin">登录</el-button>
+    <el-button v-show="isLogin() && !isPublish()" class="small-button login-publish" @click="toPublishArticle">
       发帖
     </el-button>
   </div>
@@ -57,7 +57,6 @@ const route = useRoute()
       text-align: center;
 
       .header-menu-item {
-        border: none;
         width: 80px;
         height: 55px;
         font-size: 20px;
@@ -68,7 +67,7 @@ const route = useRoute()
 
   .back, .login-publish {
     position: absolute;
-    top: 12px;
+    top: 11.5px;
     margin: 0;
     background-color: #3b82f6;
 
