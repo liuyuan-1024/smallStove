@@ -3,8 +3,8 @@ package com.bug.framework.service.impl;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.security.domain.entity.LoginUser;
-import com.bug.framework.security.domain.entity.Token;
+import com.bug.framework.security.models.entity.LoginUser;
+import com.bug.framework.security.models.entity.Token;
 import com.bug.framework.service.TokenService;
 import com.bug.framework.utils.JwtUtils;
 import com.bug.framework.utils.RedisCache;
@@ -14,6 +14,11 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.HashMap;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 令牌相关业务逻辑实现类
+ */
 @Service
 public class TokenServiceImpl implements TokenService {
     @Resource

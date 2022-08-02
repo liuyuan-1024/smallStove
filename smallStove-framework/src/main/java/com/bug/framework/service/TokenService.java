@@ -1,9 +1,14 @@
 package com.bug.framework.service;
 
 import com.bug.framework.models.Result;
-import com.bug.framework.security.domain.entity.LoginUser;
-import com.bug.framework.security.domain.entity.Token;
+import com.bug.framework.security.models.entity.LoginUser;
+import com.bug.framework.security.models.entity.Token;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 令牌相关业务逻辑接口
+ */
 public interface TokenService {
 
     /**

@@ -12,7 +12,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 /**
- * swagger的配置类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: swagger的配置类
  */
 @Configuration
 @EnableSwagger2WebMvc

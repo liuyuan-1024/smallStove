@@ -10,7 +10,7 @@ import {
 
 const requests = axios.create({
     // 请求地址
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:8848',
     // 设置接口超时时间, 1.5s
     timeout: 1500,
 })
@@ -39,7 +39,7 @@ requests.interceptors.request.use(
 requests.interceptors.response.use(
     (res) => {
         // 响应结果的状态(code的前三位), 200正常 400异常
-        let status = String(res.data.code).substring(0, 3);
+        const status = String(res.data.code).substring(0, 3);
         if (status !== "200") {
             delAccessTokenFromLocal()
             delRefreshTokenFromLocal()

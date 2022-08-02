@@ -11,6 +11,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: Redis缓存工具类
+ */
 @Component
 public class RedisCache {
 

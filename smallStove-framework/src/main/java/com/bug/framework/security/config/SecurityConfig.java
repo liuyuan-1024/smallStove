@@ -1,6 +1,5 @@
 package com.bug.framework.security.config;
 
-
 import com.bug.framework.security.filter.JwtAuthenticationTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +16,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.annotation.Resource;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: SpringSecurity的配置类
+ */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 

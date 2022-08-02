@@ -1,4 +1,4 @@
-package com.bug.framework.security.domain.entity;
+package com.bug.framework.security.models.entity;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -18,7 +18,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 当前登录系统的用户
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 当前登录系统的用户
  */
 @AllArgsConstructor
 @NoArgsConstructor

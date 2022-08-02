@@ -4,7 +4,9 @@ import com.bug.framework.models.ResultEnum;
 import lombok.Getter;
 
 /**
- * 自定义系统异常
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 自定义系统异常
  */
 @Getter
 public class SystemException extends RuntimeException {

@@ -16,7 +16,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 系统日志切面类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 系统日志切面类
  */
 @Component
 @Aspect
@@ -62,6 +64,7 @@ public class LogAspect {
     private void handlerBefore(ProceedingJoinPoint joinPoint) {
         // 获取请求
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        assert requestAttributes != null;
         HttpServletRequest request = requestAttributes.getRequest();
 
         // 获取joinPoint中的签名

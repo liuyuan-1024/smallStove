@@ -2,7 +2,7 @@ package com.bug.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bug.framework.models.Result;
-import com.bug.framework.security.domain.vo.LoginUserVo;
+import com.bug.framework.security.models.vo.LoginUserVo;
 import com.bug.system.domain.entity.SysUser;
 
 /**

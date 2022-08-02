@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 封装Bean拷贝工具类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 封装Bean拷贝工具类
  */
-// TODO: 2022/6/3 使用mapstruct来进行Bean拷贝
 public class BeanCopyUtils {
 
     /**
@@ -24,7 +25,8 @@ public class BeanCopyUtils {
             vo = clazz.getConstructor().newInstance();
             // bean拷贝
             BeanUtils.copyProperties(source, vo);
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
             e.printStackTrace();
         }
 
@@ -46,7 +48,8 @@ public class BeanCopyUtils {
                 BeanUtils.copyProperties(v, vo);
                 voList.add(vo);
             }
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
             e.printStackTrace();
         }
 

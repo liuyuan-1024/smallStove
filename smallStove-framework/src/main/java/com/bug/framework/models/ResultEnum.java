@@ -1,9 +1,9 @@
 package com.bug.framework.models;
 
 /**
- * 响应码枚举，参考HTTP状态码的语义
- *
- * @author BugOS-ly
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 响应码枚举，参考HTTP状态码的语义
  */
 public enum ResultEnum {
 

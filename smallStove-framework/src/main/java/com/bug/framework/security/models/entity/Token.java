@@ -1,4 +1,4 @@
-package com.bug.framework.security.domain.entity;
+package com.bug.framework.security.models.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * token实体类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: token实体类
  */
 @NoArgsConstructor
 @AllArgsConstructor

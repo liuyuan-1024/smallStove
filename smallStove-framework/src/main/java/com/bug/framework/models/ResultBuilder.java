@@ -1,9 +1,9 @@
 package com.bug.framework.models;
 
 /**
- * 统一响应类
- *
- * @author BugOS-ly
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 统一响应类
  */
 public final class ResultBuilder {
 

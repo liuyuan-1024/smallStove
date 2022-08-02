@@ -10,7 +10,9 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Redis序列化器配置
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: Redis序列化器配置
  */
 public class FastJsonRedisSerializer<T> implements RedisSerializer<T> {
 

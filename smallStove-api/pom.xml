@@ -12,9 +12,6 @@
     <version>1.0-SNAPSHOT</version>
     <name>smallStove-stove</name>
 
-    <properties>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

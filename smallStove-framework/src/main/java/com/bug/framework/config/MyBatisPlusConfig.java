@@ -8,6 +8,11 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: swagger的配置类
+ */
 @Component
 @MapperScan("com.bug.system.mapper")
 public class MyBatisPlusConfig {

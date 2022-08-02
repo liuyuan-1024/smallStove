@@ -6,7 +6,9 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 /**
- * Spring定时任务配置类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: Spring定时任务配置类
  */
 @Configuration
 public class ScheduledConfig {

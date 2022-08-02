@@ -1,7 +1,7 @@
 // noinspection JSIgnoredPromiseFromCall
 
 import router from '@/router'
-import {useRoute} from "vue-router";
+import {useRoute} from 'vue-router'
 
 export function back() {
     router.push('/')
@@ -11,8 +11,12 @@ export function toMain() {
     router.push('/')
 }
 
-export function toAttention() {
-    router.push('/attention')
+/**
+ * 查看本人关注的用户发表的相关帖子
+ * @param userId 本人ID
+ */
+export function toAttention(userId: number) {
+    router.push({name: 'Attention', params: {userId: userId}});
 }
 
 export function toPublishArticle() {
@@ -50,7 +54,7 @@ export function toTagDetails() {
 
 // 判断当前是否已登录
 export function isLogin() {
-    let access = localStorage.getItem('access_token')
+    const access = localStorage.getItem('access_token')
     return !(access === null || access === undefined || access === '');
 }
 

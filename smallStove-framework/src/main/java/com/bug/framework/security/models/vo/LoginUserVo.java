@@ -1,12 +1,17 @@
-package com.bug.framework.security.domain.vo;
+package com.bug.framework.security.models.vo;
 
-import com.bug.framework.security.domain.entity.Token;
+import com.bug.framework.security.models.entity.Token;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: LoginUser的视图对象
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

@@ -1,7 +1,9 @@
 package com.bug.framework.constant;
 
 /**
- * 系统常量
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 系统常量
  */
 public class SystemConstant {
 

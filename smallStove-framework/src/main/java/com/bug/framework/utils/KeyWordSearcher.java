@@ -10,7 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 关键字检索器, 用来检索文本中是否存在敏感词
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 关键字检索器, 用来检索文本中是否存在敏感词
  */
 @SuppressWarnings("unchecked")
 public class KeyWordSearcher {

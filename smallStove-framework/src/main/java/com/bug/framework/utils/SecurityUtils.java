@@ -1,12 +1,14 @@
 package com.bug.framework.utils;
 
-import com.bug.framework.security.domain.entity.LoginUser;
+import com.bug.framework.security.models.entity.LoginUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * 安全服务工具类
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 安全服务工具类
  */
 public class SecurityUtils {
 

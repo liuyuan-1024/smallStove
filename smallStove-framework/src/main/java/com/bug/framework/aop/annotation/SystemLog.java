@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 系统日志注解类, 用于标识aop的切点
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 系统日志注解类, 用于标识aop的切点
  */
 // 此注解存活到什么阶段: 运行时
 @Retention(RetentionPolicy.RUNTIME)

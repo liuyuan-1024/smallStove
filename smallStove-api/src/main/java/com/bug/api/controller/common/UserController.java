@@ -2,7 +2,7 @@ package com.bug.api.controller.common;
 
 
 import com.bug.framework.models.Result;
-import com.bug.framework.security.domain.vo.LoginUserVo;
+import com.bug.framework.security.models.vo.LoginUserVo;
 import com.bug.system.service.SysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

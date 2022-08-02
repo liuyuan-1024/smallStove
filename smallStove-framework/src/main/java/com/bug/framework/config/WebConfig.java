@@ -13,7 +13,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 /**
- * 设置springboot允许跨域
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 设置springboot允许跨域
  */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
@@ -27,9 +29,6 @@ public class WebConfig implements WebMvcConfigurer {
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
         fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
-
-//        SerializeConfig.globalInstance.put(Long.class, ToStringSerializer.instance);
-
         fastJsonConfig.setSerializeConfig(SerializeConfig.globalInstance);
         fastConverter.setFastJsonConfig(fastJsonConfig);
         return fastConverter;

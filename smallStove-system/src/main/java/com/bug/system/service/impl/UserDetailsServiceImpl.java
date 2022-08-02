@@ -1,7 +1,7 @@
 package com.bug.system.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.bug.framework.security.domain.entity.LoginUser;
+import com.bug.framework.security.models.entity.LoginUser;
 import com.bug.system.domain.entity.SysRole;
 import com.bug.system.domain.entity.SysUser;
 import com.bug.system.service.SysRoleService;

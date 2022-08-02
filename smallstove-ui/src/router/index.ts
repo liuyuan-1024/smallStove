@@ -48,7 +48,7 @@ const routes = [
     },
     {
         // 关注
-        path: '/attention',
+        path: '/attention/:userId',
         name: 'Attention',
         component: AttentionView,
         meta: {auth: true, keepAlive: false, title: '关注-开源小灶'},

@@ -13,9 +13,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.*;
 
 /**
- * JWT工具类，用来生成token和refreshToken
- * token：身份验证token
- * refreshToken：当token过期时，重新签发token
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: JWT工具类，用来生成access_token和refreshToken
  */
 public class JwtUtils {
     //一般放在官方声明中

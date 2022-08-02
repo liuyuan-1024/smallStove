@@ -3,8 +3,8 @@ package com.bug.framework.service.impl;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.security.domain.entity.LoginUser;
-import com.bug.framework.security.domain.vo.LoginUserVo;
+import com.bug.framework.security.models.entity.LoginUser;
+import com.bug.framework.security.models.vo.LoginUserVo;
 import com.bug.framework.service.SysLoginService;
 import com.bug.framework.service.TokenService;
 import com.bug.framework.utils.BeanCopyUtils;
@@ -18,6 +18,11 @@ import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 用户登录业务逻辑实现类
+ */
 @Service
 public class SysLoginServiceImpl implements SysLoginService {
     @Resource

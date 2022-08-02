@@ -7,10 +7,10 @@ import lombok.*;
 import java.io.Serializable;
 
 /**
- * 统一API响应结果封装
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 统一API响应结果封装
  * 不要单独使用Result会编译出错,使用ResultBuilder方法调用 Result为返回结果
- *
- * @author BugOS-ly
  */
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(access = AccessLevel.MODULE)

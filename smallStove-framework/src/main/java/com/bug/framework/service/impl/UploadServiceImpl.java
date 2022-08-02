@@ -21,6 +21,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 七牛云上传文件业务逻辑实现类
+ */
 @Service
 public class UploadServiceImpl implements UploadService {
 
@@ -64,13 +69,12 @@ public class UploadServiceImpl implements UploadService {
 
     @Override
     public Result<String> uploadImage(MultipartFile image) {
-        if (ObjectUtils.isEmpty(image)) {
+        String filename = image.getOriginalFilename();
+        // 判断文件是否为空
+        if (ObjectUtils.isEmpty(filename)) {
             return new ResultBuilder().error(ResultEnum.UPLOAD_FAIL, "上传图片为空,请重新上传!");
         }
-
         // 判断文件类型和大小
-        String filename = image.getOriginalFilename();
-        assert filename != null;
         if (!filename.endsWith(SystemConstant.JPG)) {
             return new ResultBuilder().error(ResultEnum.UPLOAD_FAIL, "图片格式不正确, 应是jpg,jpeg,png!且单张大小不超过2MB");
         }

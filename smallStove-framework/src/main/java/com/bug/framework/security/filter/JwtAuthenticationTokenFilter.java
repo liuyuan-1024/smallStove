@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.bug.framework.constant.SystemConstant;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.security.domain.entity.LoginUser;
+import com.bug.framework.security.models.entity.LoginUser;
 import com.bug.framework.utils.JwtUtils;
 import com.bug.framework.utils.RedisCache;
 import com.bug.framework.utils.WebUtils;
@@ -22,9 +22,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * JWT验证令牌过滤器（认证过滤器）
- * 我们会颁发两个token, 但是, 除非其中一个token为空, 否则只能携带一个token,
- * 在此处实现了token的无感刷新和redis的刷新
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: JWT验证令牌过滤器（认证过滤器）我们会颁发两个token (access_token refresh_token),
+ * 每次请求必须携带两个token 在此处实现了token的无感刷新和redis的刷新
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {

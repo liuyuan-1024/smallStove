@@ -13,7 +13,7 @@
              @on-upload-img="onUploadImg"
   />
   <TagsSelect/>
-  <el-button id="submit" class="menu-button submit-button" @click="publish">提交</el-button>
+  <el-button id="submit" class="small-button submit-button" @click="publish">提交</el-button>
 </template>
 
 <script setup lang="ts">
@@ -25,8 +25,8 @@ import {ElMessage} from "element-plus/es";
 
 const placeholder = "首个'一级标题'将作为帖子标题,\n暂不支持上传图片, 十分抱歉!!"
 const toolbars = [
-  'bold', 'underline', 'italic', 'strikeThrough', 'sub', 'sup', 'quote', 'unorderedList', 'orderedList', 'codeRow',
-  'code', 'link', 'image', 'table', 'mermaid', 'katex', 'revoke', 'next', 'save',
+  'title', 'bold', 'underline', 'italic', 'strikeThrough', 'sub', 'sup', 'quote', 'unorderedList', 'orderedList',
+  'codeRow', 'code', 'link', 'image', 'table', 'mermaid', 'katex', 'revoke', 'next', 'save',
   '=',
   'pageFullscreen', 'preview', 'htmlPreview', 'catalog'
 ];
@@ -72,5 +72,6 @@ function publish(): void {
 .submit-button {
   background-color: #1e293b;
   margin-left: 6px;
+  font-size: 18px;
 }
 </style>

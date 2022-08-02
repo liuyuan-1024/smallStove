@@ -8,7 +8,7 @@ import com.bug.framework.exception.SystemException;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.security.domain.entity.LoginUser;
+import com.bug.framework.security.models.entity.LoginUser;
 import com.bug.framework.utils.BeanCopyUtils;
 import com.bug.framework.utils.KeyWordSearcher;
 import com.bug.framework.utils.RedisCache;

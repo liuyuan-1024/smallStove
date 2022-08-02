@@ -23,6 +23,15 @@ public class UploadController {
         return uploadService.uploadImage(avatar);
     }
 
+    /**
+     * 测试图片上传
+     */
+    @ApiOperation(value = "上传图片", notes = "一次上传一张图片")
+    @PostMapping("/upload-image")
+    public Result<?> uploadImage(MultipartFile image) {
+        return uploadService.uploadImage(image);
+    }
+
     @ApiOperation(value = "上传图片", notes = "可一次上传多张图片")
     @PostMapping("/upload-images")
     public Result<?> uploadImages(MultipartFile[] images) {

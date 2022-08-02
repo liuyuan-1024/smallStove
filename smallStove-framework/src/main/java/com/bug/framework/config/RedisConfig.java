@@ -20,7 +20,9 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
- * 自定义Redis配置类，进行序列化以及RedisTemplate设置
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 自定义Redis配置类，进行序列化以及RedisTemplate设置
  */
 @Configuration
 public class RedisConfig {

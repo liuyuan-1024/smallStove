@@ -1,9 +1,9 @@
 package com.bug.framework.exception.handler;
 
+import com.bug.framework.exception.SystemException;
 import com.bug.framework.models.Result;
 import com.bug.framework.models.ResultBuilder;
 import com.bug.framework.models.ResultEnum;
-import com.bug.framework.exception.SystemException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * 全局异常处理器(处理控制层的异常)
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: 全局异常处理器(处理控制层的异常) 所有异常必须抛出到controller层来进行统一处理
  * 注解：@RestControllerAdvice == @ControllerAdvice + @ResponseBody
  */
 @RestControllerAdvice

@@ -14,8 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * SpringSecurity的自定义认证失败处理器
- * 身份验证入口点
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: SpringSecurity的自定义认证失败处理器 (身份验证入口点)
  */
 @Component
 public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {

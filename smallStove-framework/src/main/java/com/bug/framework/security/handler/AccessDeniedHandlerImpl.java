@@ -14,8 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * SpringSecurity的自定义授权失败处理器
- * 拒绝访问处理程序
+ * @Author: BugOS-ly
+ * @Date: 2022/7/15 21:19
+ * @Description: SpringSecurity的自定义授权失败处理器 (拒绝访问处理程序)
  */
 @Component
 public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
