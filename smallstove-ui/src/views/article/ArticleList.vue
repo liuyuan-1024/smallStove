@@ -83,8 +83,8 @@ const handleCurrentChange = () => {
     currentPage: currentPage.value,
     pageSize: pageSize.value,
   }).then((res: any) => {
-    page.rows = res.rows
-    page.total = res.total
+    page.rows = res.data.rows
+    page.total = res.data.total
   })
 }
 </script>

@@ -68,8 +68,6 @@
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <!-- devtools依赖此配置（否则，devtools不生效）。 -->
-                    <fork>true</fork>
                 </configuration>
             </plugin>
             <plugin>
@@ -78,6 +76,9 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.bug.api.SmallStoveApplication</mainClass>
+                    <!-- devtools依赖此配置（否则，devtools不生效）。 -->
+                    <fork>true</fork>
+                    <addResources>true</addResources>
                 </configuration>
                 <executions>
                     <execution>

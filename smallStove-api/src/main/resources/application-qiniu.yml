@@ -1,7 +1,0 @@
-# 七牛云头像存储
-oss:
-  # 七牛云域名
-  domainName: http://regz5bauo.hn-bkt.clouddn.com/
-  accessKey: sE3Ek3xsCRjI2WS3_Lp1YSVGy7ZpTHIWUcziWidc
-  secretKey: vjX7s_aDnWQ0gS3ZaIUaPtRXItcJ_cNsjXtAjqCO
-  bucket: small-stove-vue
