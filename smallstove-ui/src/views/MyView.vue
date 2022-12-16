@@ -1,7 +1,7 @@
 <template>
   <div class="floating-border user-info">
     <el-image
-        :src="avatar? avatar:'avatar-404.jpg'"
+        :src="loginUserRef.avatar? avatar:'avatar-404.jpg'"
         fit="fill"
         loading="lazy"
         :preview-src-list="avatar"
@@ -9,13 +9,14 @@
     <h1>昵称: {{ nickName }}</h1>
     <div v-if="isLoginUser()">
       账号: {{ loginUserRef.username }}
-      <br/>
+      <br>
       邮箱: {{ loginUserRef.email }}
-      <br/>
+      <br>
       手机: {{ loginUserRef.mobile }}
-      <br/>
+      <br>
       性别: {{ Sex[loginUserRef.sex] }}
     </div>
+    <el-button type="danger" @click="logout">退出登录</el-button>
   </div>
 
   <div class="user-articles">
@@ -43,7 +44,7 @@ import {reactive, ref} from "vue";
 import {useRoute} from "vue-router";
 import {useLoginUserStore} from "@/stores";
 import {storeToRefs} from "pinia";
-import {getUserInfo} from "@/api/user";
+import {getUserInfo , logout} from "@/api/user";
 import {getArticleList} from "@/api/article";
 import {toArticleDetails} from '@/assets/ts/common';
 import SimpleArticle from '@/components/article/SimpleArticle.vue';

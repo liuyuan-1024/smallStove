@@ -13,7 +13,7 @@
         </el-menu-item>
       </el-menu>
     </div>
-    <div id="topics" class="clearFloat" v-show="showTopics">
+    <div v-show="showTopics" id="topics" class="clearFloat">
       <el-button class="small-button" @click="toTagDetails">Java核心</el-button>
       <el-button class="small-button" @click="toTagDetails">Web开发</el-button>
       <el-button class="small-button" @click="toTagDetails">Vue探讨</el-button>
@@ -30,7 +30,7 @@
       v-model:currentPage="currentPage"
       v-model:pageSize="pageSize"
       :pager-count="7"
-      layout="total,size, prev, pager, next, jumper"
+      layout="total,size,prev,pager,next,jumper"
       :total="page.total"
       class="pagination"
       @current-change="handleCurrentChange"

@@ -1,7 +1,7 @@
 import LoginUser from "@/types/interface/LoginUser";
 
-const ACCESS: string = 'access_token'
-const REFRESH: string = 'refresh_token'
+const ACCESS = 'access_token'
+const REFRESH = 'refresh_token'
 
 /**
  * localStorage存储access_token
@@ -55,7 +55,7 @@ export function clearLocal() {
 }
 
 
-const LOGIN_USER: string = 'loginUser'
+const LOGIN_USER = 'loginUser'
 
 /**
  * sessionStorage存储登录用户信息

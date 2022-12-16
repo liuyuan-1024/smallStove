@@ -12,4 +12,6 @@ public interface SysLoginService {
     Result<?> login(String username, String password);
 
     Result<?> logout();
+
+    Result<Boolean> isLogin(Long userId);
 }

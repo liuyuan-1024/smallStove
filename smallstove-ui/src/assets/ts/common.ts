@@ -52,7 +52,7 @@ export function toTagDetails() {
     router.push('/tagDetails')
 }
 
-// 判断当前是否已登录
+// 判断当前是否已登录 todo 如果有人用已过期的token放入localStorage,咋办？
 export function isLogin() {
     const access = localStorage.getItem('access_token')
     return !(access === null || access === undefined || access === '');

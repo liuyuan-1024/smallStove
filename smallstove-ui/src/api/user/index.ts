@@ -2,6 +2,7 @@ import requests from "@/api/requests";
 import {ElMessage} from "element-plus/es";
 import {isSuccess} from "@/utils/common";
 import {clearLocal, clearSession} from "@/utils/storage";
+import router from "@/router";
 
 /**
  * 检查token是否合法
@@ -38,6 +39,22 @@ export async function logout() {
                 clearLocal()
                 clearSession()
                 ElMessage.success(res.message)
+                router.push('/')
+            }
+        })
+}
+
+/**
+ * todo 在assets/ts/commons.ts中已有判断方法
+ * 判断用户是否已登录
+ * true 已登陆
+ * false 未登录
+ */
+export async function isLogin(userId: number) {
+    requests.get(`/isLogin/${userId}`)
+        .then((res: any)=>{
+            if (isSuccess(res.code)){
+                return res.data;
             }
         })
 }

@@ -71,4 +71,14 @@ public class SysLoginServiceImpl implements SysLoginService {
         return new ResultBuilder().success("注销登录成功");
     }
 
+    @Override
+    public Result<Boolean> isLogin(Long userId) {
+        Object user = redisCache.get(redisCache.getLoginUserKey(userId));
+        if (ObjectUtils.isEmpty(user)){
+            return new ResultBuilder().success("用户未登录", false);
+        }else {
+            return new ResultBuilder().success("用户已登录", true);
+        }
+    }
+
 }

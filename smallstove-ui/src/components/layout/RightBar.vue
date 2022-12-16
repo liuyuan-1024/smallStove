@@ -1,5 +1,5 @@
 <template>
-  <el-aside id="right-bar">
+  <el-aside v-show="isLogin()" id="right-bar">
     <div class="search-bar">
       <el-input class="search" placeholder="Please Input" clearable :prefix-icon="Search"/>
     </div>
@@ -25,9 +25,12 @@ import {Search} from '@element-plus/icons-vue';
 import {isPublish} from "@/assets/ts/common";
 import {useLoginUserStore} from "@/stores";
 import {storeToRefs} from "pinia";
-import {toMy} from "@/assets/ts/common";
+import {toMy,isLogin} from "@/assets/ts/common";
 
 const loginUserRef = storeToRefs(useLoginUserStore()).loginUser;
+
+let login = isLogin();
+console.log("isLogin", login);
 </script>
 
 <style lang="less" scoped>
