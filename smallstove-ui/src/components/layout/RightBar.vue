@@ -1,36 +1,31 @@
 <template>
   <el-aside v-show="isLogin()" id="right-bar">
     <div class="search-bar">
-      <el-input class="search" placeholder="Please Input" clearable :prefix-icon="Search"/>
+      <el-input class="search" placeholder="Please Input" clearable :prefix-icon="Search" />
     </div>
 
     <div class="floating-border user-info clearFloat">
-      <el-image
-          :src="loginUserRef.avatar"
-          fit="fill"
-          class="avatar"
-          @click="toMy(loginUserRef.id)"
-      />
+      <el-image :src="loginUserRef.avatar" fit="fill" class="avatar" @click="toMy(loginUserRef.id)" />
       <h2>{{ loginUserRef.nickName }}</h2>
     </div>
 
     <!-- markdown 快捷键 -->
-    <HotKey v-if="isPublish()"/>
+    <HotKey v-if="isPublish()" />
   </el-aside>
 </template>
 
 <script lang="ts" setup>
-import HotKey from '@/components/markdown/HotKey.vue';
-import {Search} from '@element-plus/icons-vue';
-import {isPublish} from "@/assets/ts/common";
-import {useLoginUserStore} from "@/stores";
-import {storeToRefs} from "pinia";
-import {toMy,isLogin} from "@/assets/ts/common";
+import HotKey from '@/components/markdown/HotKey.vue'
+import { Search } from '@element-plus/icons-vue'
+import { isPublish } from '@/assets/ts/common'
+import { useLoginUserStore } from '@/stores'
+import { storeToRefs } from 'pinia'
+import { toMy, isLogin } from '@/assets/ts/common'
 
-const loginUserRef = storeToRefs(useLoginUserStore()).loginUser;
+const loginUserRef = storeToRefs(useLoginUserStore()).loginUser
 
-let login = isLogin();
-console.log("isLogin", login);
+let login = isLogin()
+console.log('isLogin', login)
 </script>
 
 <style lang="less" scoped>

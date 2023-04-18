@@ -3,5 +3,5 @@
  * @param code 响应码
  */
 export function isSuccess(code: number) {
-    return String(code).substring(0, 3) === '200';
+  return String(code).substring(0, 3) === '200'
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="fixed-header">
-    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="small-button back" @click="back()"/>
+    <el-button v-show="!isArticleListView()" :icon="ArrowLeftBold" class="small-button back" @click="back()" />
 
     <div class="header-menu-box">
       <el-menu :default-active="route.path" mode="horizontal" :ellipsis="false" class="menu header-menu">
@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ArrowLeftBold} from '@element-plus/icons-vue'
+import { ArrowLeftBold } from '@element-plus/icons-vue'
 import {
   back,
   toMain,
@@ -31,8 +31,8 @@ import {
   isLogin,
   isArticleListView,
   isPublish
-} from "@/assets/ts/common";
-import {useRoute} from "vue-router";
+} from '@/assets/ts/common'
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
 </script>
@@ -64,8 +64,8 @@ const route = useRoute()
     }
   }
 
-
-  .back, .login-publish {
+  .back,
+  .login-publish {
     position: absolute;
     top: 11.5px;
     margin: 0;

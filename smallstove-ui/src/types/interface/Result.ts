@@ -1,5 +1,5 @@
 export default interface Result<T> {
-    code: number,
-    message: string,
-    data: T
+  code: number
+  message: string
+  data: T
 }

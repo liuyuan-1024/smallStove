@@ -9,16 +9,15 @@
     </div>
 
     <h1>{{ article.title }}</h1>
-    <md-editor v-model="article.thumbnail" preview-only class="markdown" preview-theme="preview"/>
+    <md-editor v-model="article.thumbnail" preview-only class="markdown" preview-theme="preview" />
   </div>
-
 </template>
 
 <script setup lang="ts">
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
-import {toTagDetails} from '@/assets/ts/common'
-import Article from "@/types/interface/Article";
+import { toTagDetails } from '@/assets/ts/common'
+import Article from '@/types/interface/Article'
 
 defineProps<{
   article: Article
@@ -30,7 +29,7 @@ defineProps<{
   margin: 10px 0;
   padding: 10px;
 
-  .simple-header{
+  .simple-header {
     padding-bottom: 5px;
   }
 }

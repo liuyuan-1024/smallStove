@@ -1,19 +1,19 @@
 <template>
   <div class="floating-border user-info">
     <el-image
-        :src="loginUserRef.avatar? avatar:'avatar-404.jpg'"
-        fit="fill"
-        loading="lazy"
-        :preview-src-list="avatar"
+      :src="loginUserRef.avatar ? avatar : 'avatar-404.jpg'"
+      fit="fill"
+      loading="lazy"
+      :preview-src-list="avatar"
     />
     <h1>昵称: {{ nickName }}</h1>
     <div v-if="isLoginUser()">
       账号: {{ loginUserRef.username }}
-      <br>
+      <br />
       邮箱: {{ loginUserRef.email }}
-      <br>
+      <br />
       手机: {{ loginUserRef.mobile }}
-      <br>
+      <br />
       性别: {{ Sex[loginUserRef.sex] }}
     </div>
     <el-button type="danger" @click="logout">退出登录</el-button>
@@ -21,36 +21,36 @@
 
   <div class="user-articles">
     <simple-article
-        v-for="(article, index) in page.rows"
-        :key="index"
-        :article="article"
-        @click="toArticleDetails(article.articleId)"
+      v-for="(article, index) in page.rows"
+      :key="index"
+      :article="article"
+      @click="toArticleDetails(article.articleId)"
     />
 
     <el-pagination
-        v-model:currentPage="currentPage"
-        v-model:pageSize="pageSize"
-        class="pagination"
-        :pager-count="7"
-        layout="total,size, prev, pager, next, jumper"
-        :total="page.total"
-        @current-change="handleCurrentChange"
+      v-model:currentPage="currentPage"
+      v-model:pageSize="pageSize"
+      class="pagination"
+      :pager-count="7"
+      layout="total,size, prev, pager, next, jumper"
+      :total="page.total"
+      @current-change="handleCurrentChange"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import {reactive, ref} from "vue";
-import {useRoute} from "vue-router";
-import {useLoginUserStore} from "@/stores";
-import {storeToRefs} from "pinia";
-import {getUserInfo , logout} from "@/api/user";
-import {getArticleList} from "@/api/article";
-import {toArticleDetails} from '@/assets/ts/common';
-import SimpleArticle from '@/components/article/SimpleArticle.vue';
-import Page from "@/types/interface/Page";
-import Article from "@/types/interface/Article";
-import {Sex} from "@/enums/SystemEnums";
+import { reactive, ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { useLoginUserStore } from '@/stores'
+import { storeToRefs } from 'pinia'
+import { getUserInfo, logout } from '@/api/user'
+import { getArticleList } from '@/api/article'
+import { toArticleDetails } from '@/assets/ts/common'
+import SimpleArticle from '@/components/article/SimpleArticle.vue'
+import Page from '@/types/interface/Page'
+import Article from '@/types/interface/Article'
+import { Sex } from '@/enums/SystemEnums'
 
 // 当前登录用户信息
 let loginUserRef = storeToRefs(useLoginUserStore()).loginUser
@@ -66,19 +66,18 @@ function isLoginUser(): boolean {
 }
 
 if (!isLoginUser()) {
-  getUserInfo(Number(useRoute().params.userId))
-      .then((res) => {
-        avatar.value = res.data.avatar
-        nickName.value = res.data.nickName
-      })
+  getUserInfo(Number(useRoute().params.userId)).then((res) => {
+    avatar.value = res.data.avatar
+    nickName.value = res.data.nickName
+  })
 }
 
 // 分页相关
-let currentPage = ref<number>(1);
+let currentPage = ref<number>(1)
 let pageSize = ref<number>(10)
 const page = reactive<Page<Article>>({
   rows: [],
-  total: 0,
+  total: 0
 })
 getArticleList({
   currentPage: currentPage.value,
@@ -91,7 +90,7 @@ getArticleList({
 const handleCurrentChange = () => {
   getArticleList({
     currentPage: currentPage.value,
-    pageSize: pageSize.value,
+    pageSize: pageSize.value
   }).then((res: any) => {
     page.rows = res.rows
     page.total = res.total

@@ -20,31 +20,27 @@
     </div>
   </div>
 
-  <SingleArticle
-      v-for="(article, index) in page.rows"
-      :key="index"
-      :article="article"
-  />
+  <SingleArticle v-for="(article, index) in page.rows" :key="index" :article="article" />
 
   <el-pagination
-      v-model:currentPage="currentPage"
-      v-model:pageSize="pageSize"
-      :pager-count="7"
-      layout="total,size,prev,pager,next,jumper"
-      :total="page.total"
-      class="pagination"
-      @current-change="handleCurrentChange"
+    v-model:currentPage="currentPage"
+    v-model:pageSize="pageSize"
+    :pager-count="7"
+    layout="total,size,prev,pager,next,jumper"
+    :total="page.total"
+    class="pagination"
+    @current-change="handleCurrentChange"
   />
 </template>
 
 <script setup lang="ts">
-import {ref, reactive} from 'vue'
-import {useRoute} from "vue-router";
+import { ref, reactive } from 'vue'
+import { useRoute } from 'vue-router'
 import SingleArticle from '@/components/article/SingleArticle.vue'
-import {getArticleList} from '@/api/article'
-import {toTagDetails} from '@/assets/ts/common'
+import { getArticleList } from '@/api/article'
+import { toTagDetails } from '@/assets/ts/common'
 import Page from '@/types/interface/Page'
-import Article from "@/types/interface/Article";
+import Article from '@/types/interface/Article'
 
 const route = useRoute()
 
@@ -67,12 +63,12 @@ let currentPage = ref<number>(1)
 let pageSize = ref<number>(10)
 const page = reactive<Page<Article>>({
   rows: [],
-  total: 0,
+  total: 0
 })
 
 getArticleList({
   currentPage: currentPage.value,
-  pageSize: pageSize.value,
+  pageSize: pageSize.value
 }).then((res: any) => {
   page.rows = res.data.rows
   page.total = res.data.total
@@ -81,7 +77,7 @@ getArticleList({
 const handleCurrentChange = () => {
   getArticleList({
     currentPage: currentPage.value,
-    pageSize: pageSize.value,
+    pageSize: pageSize.value
   }).then((res: any) => {
     page.rows = res.data.rows
     page.total = res.data.total

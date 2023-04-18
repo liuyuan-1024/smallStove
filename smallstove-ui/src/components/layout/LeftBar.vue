@@ -5,31 +5,31 @@
     <el-menu :default-active="route.path" class="menu floating-border">
       <el-menu-item class="floating-border menu-item left-menu-item" index="/" @click="toMain()">
         <el-icon>
-          <Monitor/>
+          <Monitor />
         </el-icon>
         <span>主页</span>
       </el-menu-item>
       <el-menu-item class="floating-border menu-item left-menu-item" index="/notification" @click="toNotification()">
         <el-icon>
-          <Bell/>
+          <Bell />
         </el-icon>
         <span>通知</span>
       </el-menu-item>
       <el-menu-item class="floating-border menu-item left-menu-item" index="/chat" @click="toChat()">
         <el-icon>
-          <ChatDotRound/>
+          <ChatDotRound />
         </el-icon>
         <span>私信</span>
       </el-menu-item>
       <el-menu-item class="floating-border menu-item left-menu-item" index="/favorites" @click="toFavorites()">
         <el-icon>
-          <Star/>
+          <Star />
         </el-icon>
         <span>收藏</span>
       </el-menu-item>
       <el-menu-item class="floating-border menu-item left-menu-item" index="/my" @click="toMy(loginUserRef.id)">
         <el-icon>
-          <User/>
+          <User />
         </el-icon>
         <span>我的</span>
       </el-menu-item>
@@ -38,11 +38,11 @@
 </template>
 
 <script lang="ts" setup>
-import {useLoginUserStore} from "@/stores";
-import {storeToRefs} from "pinia";
-import {Monitor, Bell, ChatDotRound, Star, User} from '@element-plus/icons-vue';
-import {useRoute} from "vue-router";
-import {toMain, toNotification, toChat, toFavorites, toMy} from "@/assets/ts/common";
+import { useLoginUserStore } from '@/stores'
+import { storeToRefs } from 'pinia'
+import { Monitor, Bell, ChatDotRound, Star, User } from '@element-plus/icons-vue'
+import { useRoute } from 'vue-router'
+import { toMain, toNotification, toChat, toFavorites, toMy } from '@/assets/ts/common'
 
 const route = useRoute()
 const loginUserRef = storeToRefs(useLoginUserStore()).loginUser

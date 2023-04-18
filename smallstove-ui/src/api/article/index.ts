@@ -1,18 +1,18 @@
-import requests from "@/api/requests";
-import {ElMessage} from "element-plus/es";
-import {isSuccess} from "@/utils/common";
+import requests from '@/api/requests'
+import { ElMessage } from 'element-plus/es'
+import { isSuccess } from '@/utils/common'
 
 /**
  * 分页获取文章列表
  * @param args 分页数据: 当前页, 页尺寸, 类型ID, 用户ID
  */
 export async function getArticleList(args: {
-    currentPage: number
-    pageSize: number
-    typeId?: number
-    userId?: number
+  currentPage: number
+  pageSize: number
+  typeId?: number
+  userId?: number
 }) {
-    return requests.get('/anonymous/article-list', {params: args})
+  return requests.get('/anonymous/article-list', { params: args })
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getArticleList(args: {
  * @param articleId 文章ID
  */
 export async function getArticleDetails(articleId: unknown) {
-    return requests.get(`/anonymous/article-details/${articleId}`)
+  return requests.get(`/anonymous/article-details/${articleId}`)
 }
 
 /**
@@ -28,24 +28,23 @@ export async function getArticleDetails(articleId: unknown) {
  * @param articleId
  */
 export async function likes(articleId: unknown) {
-    requests.put(`/likes/${articleId}`)
-        .then((value: any) => {
-            if (isSuccess(value.code)) {
-                ElMessage.success(value.message)
-            }
-        })
+  requests.put(`/likes/${articleId}`).then((value: any) => {
+    if (isSuccess(value.code)) {
+      ElMessage.success(value.message)
+    }
+  })
 }
 
 /**
  * 查询文章标签
  */
 export async function getTags() {
-    return requests.get('/tags')
+  return requests.get('/tags')
 }
 
 /**
  * 图片上传
  */
 export async function upload() {
-    return requests.post('/upload-image')
+  return requests.post('/upload-image')
 }

@@ -9,17 +9,17 @@
 </template>
 
 <script setup lang="ts">
-import {MagicStick, ForkSpoon, Share} from '@element-plus/icons-vue'
-import {likes} from '@/api/article'
-import {toRef} from "vue";
+import { MagicStick, ForkSpoon, Share } from '@element-plus/icons-vue'
+import { likes } from '@/api/article'
+import { toRef } from 'vue'
 
 const props = defineProps<{
-  articleId: number,
-  viewsNumber: number,
-  likesNumber: number,
+  articleId: number
+  viewsNumber: number
+  likesNumber: number
 }>()
 
-let likesNumberRef = toRef(props, 'likesNumber');
+let likesNumberRef = toRef(props, 'likesNumber')
 </script>
 
 <style lang="less" scoped>

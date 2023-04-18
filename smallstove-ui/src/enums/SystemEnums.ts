@@ -1,5 +1,5 @@
 export enum Sex {
-    male,
-    female,
-    unknown
+  male,
+  female,
+  unknown
 }

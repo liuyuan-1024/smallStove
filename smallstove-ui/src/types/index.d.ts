@@ -1,2 +1,2 @@
 // v-md-editor
-declare module 'prismjs';
+declare module 'prismjs'

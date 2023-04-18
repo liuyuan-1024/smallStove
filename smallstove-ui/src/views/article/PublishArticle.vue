@@ -1,35 +1,52 @@
 <template>
-  <el-input v-model="title"
-            maxlength="64"
-            show-word-limit
-            placeholder="标题, 不超过64个字"
-            class="title-input"
+  <el-input v-model="title" maxlength="64" show-word-limit placeholder="标题, 不超过64个字" class="title-input" />
+  <md-editor
+    v-model="content"
+    :toolbars="toolbars"
+    :placeholder="placeholder"
+    :show-code-row-number="true"
+    class="markdown markdown-editor"
+    @on-upload-img="onUploadImg"
   />
-  <md-editor v-model="content"
-             :toolbars="toolbars"
-             :placeholder="placeholder"
-             :show-code-row-number="true"
-             class="markdown markdown-editor"
-             @on-upload-img="onUploadImg"
-  />
-  <TagsSelect/>
+  <TagsSelect />
   <el-button id="submit" class="small-button submit-button" @click="publish">提交</el-button>
 </template>
 
 <script setup lang="ts">
 import TagsSelect from '@/components/TagsSelect.vue'
-import {ref} from "vue"
+import { ref } from 'vue'
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
-import {ElMessage} from "element-plus/es";
+import { ElMessage } from 'element-plus/es'
 
 const placeholder = "首个'一级标题'将作为帖子标题,\n暂不支持上传图片, 十分抱歉!!"
 const toolbars = [
-  'title', 'bold', 'underline', 'italic', 'strikeThrough', 'sub', 'sup', 'quote', 'unorderedList', 'orderedList',
-  'codeRow', 'code', 'link', 'image', 'table', 'mermaid', 'katex', 'revoke', 'next', 'save',
+  'title',
+  'bold',
+  'underline',
+  'italic',
+  'strikeThrough',
+  'sub',
+  'sup',
+  'quote',
+  'unorderedList',
+  'orderedList',
+  'codeRow',
+  'code',
+  'link',
+  'image',
+  'table',
+  'mermaid',
+  'katex',
+  'revoke',
+  'next',
+  'save',
   '=',
-  'pageFullscreen', 'preview', 'htmlPreview', 'catalog'
-];
+  'pageFullscreen',
+  'preview',
+  'htmlPreview',
+  'catalog'
+]
 
 let title = ref<string>('')
 let content = ref<string>(``)
@@ -44,8 +61,8 @@ const onUploadImg = async (files: Array<File>, callback: (urls: Array<string>) =
   files.map((file) => {
     URLs.push(URL.createObjectURL(file))
   })
-  callback(URLs.map((url) => url));
-};
+  callback(URLs.map((url) => url))
+}
 
 /**
  * 提交帖子
@@ -56,7 +73,7 @@ function publish(): void {
     return
   }
 
-  alert('提交帖子');
+  alert('提交帖子')
 }
 </script>
 

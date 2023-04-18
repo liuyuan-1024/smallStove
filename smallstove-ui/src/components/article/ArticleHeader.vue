@@ -1,10 +1,6 @@
 <template>
   <div class="article-header clearFloat">
-    <el-image
-        :src="avatar ? avatar:'avatar-404.jpg'"
-        class="avatar"
-        @click.stop="toMy(userId)"
-    />
+    <el-image :src="avatar ? avatar : 'avatar-404.jpg'" class="avatar" @click.stop="toMy(userId)" />
     <div class="user">
       <span class="username hover-pointer" @click.stop="toMy(userId)"> {{ nickName }} </span>
       <div>
@@ -14,20 +10,20 @@
         </span>
       </div>
     </div>
-    <el-button :icon="MoreFilled" class="small-button fold-option"/>
+    <el-button :icon="MoreFilled" class="small-button fold-option" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {MoreFilled} from '@element-plus/icons-vue'
-import {toTagDetails, toMy} from '@/assets/ts/common'
-import Type from "@/types/interface/Type";
+import { MoreFilled } from '@element-plus/icons-vue'
+import { toTagDetails, toMy } from '@/assets/ts/common'
+import Type from '@/types/interface/Type'
 
 defineProps<{
-  userId: number,
-  nickName: string,
-  avatar: string,
-  createTime: string,
+  userId: number
+  nickName: string
+  avatar: string
+  createTime: string
   typeVoList: Type[]
 }>()
 </script>

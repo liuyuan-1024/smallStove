@@ -1,7 +1,7 @@
 <!-- markdown 快捷键 -->
 <template>
   <el-scrollbar id="markdown" class="floating-border">
-    <md-editor v-model="hotKey" preview-only class="markdown hot-key" preview-theme="preview"/>
+    <md-editor v-model="hotKey" preview-only class="markdown hot-key" preview-theme="preview" />
   </el-scrollbar>
 </template>
 

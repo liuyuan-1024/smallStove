@@ -1,4 +1,4 @@
 export default interface Type {
-    typeId: number
-    typeName: string
+  typeId: number
+  typeName: string
 }

@@ -1,4 +1,4 @@
 export default interface Page<T> {
-    rows: Array<T>
-    total: number
+  rows: Array<T>
+  total: number
 }
