@@ -4,12 +4,8 @@
     "baseUrl": ".",
     "paths": {
       // 用于设置模块名到基于baseUrl的路径映射
-      "@": [
-        "src"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "@": ["src"],
+      "@/*": ["src/*"]
     },
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -21,20 +17,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "types": [
-      "element-plus/global"
-    ]
+    "types": ["element-plus/global"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.vue"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
   "references": [
     {
       "path": "./tsconfig.node.json"
